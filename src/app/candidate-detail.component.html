@@ -1,0 +1,31 @@
+<div *ngIf="candidate">
+  <h2>{{candidate.name}} details!</h2>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>name</td>
+        <td>last Name</td>
+        <td>status</td>
+        <td>workplace</td>
+        <td>recruiter</td>
+        <td>CV</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{candidate.id}}</th>
+        <td><input class="form-control" [(ngModel)]="candidate.name" placeholder="name" /></td>
+        <td><input class="form-control" [(ngModel)]="candidate.lastName" placeholder="lastName" /></td>
+        <td><input class="form-control" [(ngModel)]="candidate.status" placeholder="status" /></td>
+        <td><input class="form-control" [(ngModel)]="candidate.workplace" placeholder="workplace" /></td>
+        <td><input class="form-control" [(ngModel)]="candidate.recruiter" placeholder="recruiter" /></td>
+        <td><a href="../assets/rezumes/some-test-rezume.txt" target="_blank">Resume</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button (click)="goBack()" type="button" class="btn btn-primary">Back</button>
+  <button (click)="save()" type="button" class="btn btn-primary">Save</button>
+</div>

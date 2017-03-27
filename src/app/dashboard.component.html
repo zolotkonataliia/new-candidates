@@ -1,0 +1,10 @@
+<candidate-search></candidate-search>
+<h3>Favourite Candidates</h3>
+<div class="list-group">
+  <a *ngFor="let candidate of candidates"  [routerLink]="['/detail', candidate.id]" class="list-group-item">
+      {{candidate.name}} {{candidate.lastName}}
+  </a>
+</div>
+
+
+

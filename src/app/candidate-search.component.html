@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Candidate Search</div>
+  <div class="panel-body">
+    <form class="navbar-form">
+      <div class="row">
+        <input #searchBox id="search-box" (keyup)="search(searchBox.value)" type="text" class="form-control" />
+      </div>
+    </form>
+    <div id="search-component">
+      <ul class="nav nav-pills nav-stacked">
+        <li *ngFor="let candidate of candidates | async"
+             (click)="gotoDetail(candidate)" class="search-result" >
+          {{candidate.name}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+

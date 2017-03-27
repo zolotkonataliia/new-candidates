@@ -1,0 +1,31 @@
+<h2>List of candidates</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <td>#</td>
+    <td>name</td>
+    <td>last Name</td>
+    <td>status</td>
+    <td>workplace</td>
+    <td>recruiter</td>
+    <td>delete</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr  *ngFor="let candidate of candidates"
+       [class.selected]="candidate === selectedCandidate"
+       (click)="onSelect(candidate)" [routerLink]="['/detail', candidate.id]">
+    <th scope="row">{{candidate.id}}</th>
+    <td>{{candidate.name}}</td>
+    <td>{{candidate.lastName}}</td>
+    <td>{{candidate.status}}</td>
+    <td>{{candidate.workplace}}</td>
+    <td>{{candidate.recruiter}}</td>
+    <td><button class="btn btn-danger" (click)="delete(candidate); $event.stopPropagation()">x</button></td>
+  </tr>
+  </tbody>
+</table>
+
+<add-candidate (addCandidateEvent)="add($event)"></add-candidate>
+
+

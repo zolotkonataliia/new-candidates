@@ -1,0 +1,35 @@
+<hr>
+<button class="btn btn-default collapse-btn" (click)="isCollapsed = !isCollapsed;">
+	Add new candidate
+</button>
+<div (collapsed)="collapsed($event)"
+		 (expanded)="expanded($event)"
+		 [collapse]="!isCollapsed"
+		 class="card card-block card-header">
+	 <nav class="navbar navbar-default">
+			<form class="navbar-form navbar-left" role="search">
+				<div class="form-group">
+					<input #candidateName placeholder="Name"  class="form-control"/>
+				</div>
+        <div class="form-group">
+          <input #candidateLastName placeholder="Last Name"  class="form-control"/>
+        </div>
+        <div class="form-group">
+          <input #candidateStatus placeholder="Status"  class="form-control"/>
+        </div>
+        <div class="form-group">
+          <input #candidateWorkplace placeholder="Workplace"  class="form-control"/>
+        </div>
+        <div class="form-group">
+          <input #candidateRecruiter placeholder="Recruiter"  class="form-control"/>
+        </div>
+				<button class="btn btn-primary" (click)="addCandidate(candidateName.value, candidateLastName.value, candidateStatus.value, candidateWorkplace.value, candidateRecruiter.value); candidateName.value=''; candidateLastName.value=''; candidateStatus.value=''; candidateWorkplace.value=''; candidateRecruiter.value=''">
+					Add
+				</button>
+		 </form>
+	 </nav>
+</div>
+
+
+
+

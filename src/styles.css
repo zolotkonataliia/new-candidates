@@ -1,0 +1,14 @@
+.container {
+  padding-top: 10px;
+  padding-bottom: 80px;
+}
+.collapse-btn {
+  margin-bottom: 20px;
+}
+table td,
+table th {
+  vertical-align: middle !important;
+}
+.list-group-item {
+  font-size: 18px;
+}
